@@ -9,3 +9,4 @@ pick up that can""")
 
 print("C")
 print(r"C:\Users\email\OneDrive\Documents\ArmA 3 -Other Profiles- ")
+print(type(var0))
