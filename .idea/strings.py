@@ -30,6 +30,8 @@ backwards_slice = letters[25:16:-1]
 backwards_slice2 = letters[:-9:-1]
 print(backwards_slice)
 
+print(letters[-4:]) #get the last 4 characters of any string.
+
 
 #slicing in steps, seperator example
 
@@ -43,3 +45,45 @@ print([int(val) for val in values])
 
 # % interpolation
 # print("%s %s %s" %('Hello','World', 'I am Satan.'))
+
+# Multiplying strings
+# shootin = "Dakka "
+#
+# print (shootin * 5) #"Dakka Dakka Dakka Dakka Dakka"
+#
+# print ("Dak" in shootin) #True
+# print ("ka " in shootin) #True
+# print ("Chop" in shootin) #False
+
+#Repfields
+print("Repfields\n")
+age = 24
+print("My age is " +str(age) + " years")
+#see also
+print("My age is {0} years".format(age))
+#or
+tens = "two"
+singles = "four"
+print("My age is {0} and {1} years".format(tens,singles))
+
+#String Formatting
+category = "String Formatting"
+print(f"\n\n{category}\n ")
+#bad formatting, numbers don't line up
+print("Bad formatting, numbers don't line up.")
+for i in range(1, 13):
+    print("No. {0} squared is {1} and cubed is {2}".format(i, i ** 2, i ** 3))
+print("\n\nGood formatting. Number to right of replacement index determines no. of characters in replacement space.\n")
+for i in range(1, 13):
+    print("No. {0:2} squared is {1:3} and cubed is {2:4}".format(i, i ** 2, i ** 3))
+#force left aliginment
+print("\n\nForce left alignment\n")
+for i in range(1, 13):
+    print("No. {0:<2} squared is {1:<3} and cubed is {2:<4}".format(i, i ** 2, i ** 3))
+#fstrings and other formatting
+print("\n\nf strings\n")
+pi = 22/7
+print(f"Pi is approximately {pi:12.50f}") #formats pie
+
+if(1 == 1):
+    print("florp")
