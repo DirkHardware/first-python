@@ -6,14 +6,15 @@
 
 def sanitize_age(data = input("How old are you? ")):
     acceptable = ["ninety", "eighty", "seventy", "sixty", "fifty", "forty", "thirty", "twenty"]
-    is_type = type(data)
-    if is_type == "<class 'str'>":
-        for i in range(len(acceptable)):
-            if acceptable[i] in data:
-                print("This is good data")
-    else:
-        print(type(data))
-        print("This is an integer")
+    for i in range(len(acceptable)):
+        if acceptable[i] in data:
+            print("You can vote!")
+            return "You can vote!"
+        elif len(data) < 4:
+            dataint = int(data)
+            if dataint > 17:
+                print("You can vote!")
+                return "You can vote!"
 
 
 sanitize_age()
