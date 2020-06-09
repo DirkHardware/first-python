@@ -15,6 +15,8 @@ def sanitize_age(data = input("How old are you? ")):
             if dataint > 17:
                 print("You can vote!")
                 return "You can vote!"
+        else:
+            print"Something"
 
 
 sanitize_age()
