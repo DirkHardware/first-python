@@ -18,7 +18,9 @@ def comparison_chain():
 
 def comparison_chain2():
     age = int(input("How old are you?"))
-    #When using or, unlike and, the flow control will stop as soon as it finds one that is true
+
+    # When using or, unlike and, the flow control will stop as soon as it finds one that is true
+
     if age < 16 or age > 65:
         print("Enjoy you free time")
     else:
@@ -41,7 +43,6 @@ def comparison_chain3():
     else:
         print("Learn Python")
 
-comparison_chain3()
 
 def guessing_game():
     answer = 5
@@ -67,7 +68,28 @@ def guessing_game():
 
 # guessing_game()
 
+# Dealing with caps
+
+
+def name_account_match():
+    accounts = ["julia", "anderson", "dan", "debbie"]
+    user = input("What is your name?: ")
+
+    for i in range(len(accounts)):
+        #casefold() lowercases all the characters, kind of like downcase in Ruby
+        if user.casefold() in accounts[i]:
+            print("Your account login is {}".format(accounts[i]))
+            return "Your account login is {}".format(accounts[i])
+        else:
+            print("Sorry, I don't think you have an account {}.".format(user))
+            return "Sorry, I don't think you have an account {}.".format(user)
+
+
+name_account_match()
+
 # An experiment in checking input data using a hypothetical polling booth
+
+
 def sanitize_age(data):
     acceptable = ["ninety", "eighty", "seventy", "sixty", "fifty", "forty", "thirty", "twenty", "nineteen", "eighteen"]
     accidental = [["ninety", "ninty", "niety", "nity", "ninetey", "nintey"],
