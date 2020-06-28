@@ -3,6 +3,46 @@
 # age = int(input("How old are you, {0}? ".format(name)))
 # print(age)
 
+#Simply chained comparison
+
+def comparison_chain():
+    age = int(input("How old are you? "))
+
+
+    # if age >= 16 and age <=65:
+    # is the same as
+    if 16 <= age <= 65:
+        # When comparing conditions using *and*, Python will stop checking as soon as a condition returns false
+        # Both will return the following if the condition is met
+        print("Have a good day at work")
+
+def comparison_chain2():
+    age = int(input("How old are you?"))
+    #When using or, unlike and, the flow control will stop as soon as it finds one that is true
+    if age < 16 or age > 65:
+        print("Enjoy you free time")
+    else:
+        print("Have fun at work you poor bastard")
+
+def comparison_chain3():
+    day = "Friday"
+    temperature = 30
+    raining = True
+
+    # Note the operator precedence here.
+    # Operator precedence is documented at: https://docs.python.org/3/reference/expressions.html#operator-precedence
+    # It is in ascending order. Not is highest, followed by and, trailed by or.
+    # A more clear way to render this would be:
+    # if (day == "Saturday and temperature > 27) or not raining:
+    if day == "Saturday" and temperature > 27 or not raining:
+        # The else block will execute because the Truthyness of raining trips the not condition
+        # before anything else
+        print("Go swimming")
+    else:
+        print("Learn Python")
+
+comparison_chain3()
+
 def guessing_game():
     answer = 5
     print("Please guess number between 1 and 10: ")
@@ -25,7 +65,8 @@ def guessing_game():
     else:
         print("You got it the first time.")
 
-guessing_game()
+# guessing_game()
+
 # An experiment in checking input data using a hypothetical polling booth
 def sanitize_age(data):
     acceptable = ["ninety", "eighty", "seventy", "sixty", "fifty", "forty", "thirty", "twenty", "nineteen", "eighteen"]
