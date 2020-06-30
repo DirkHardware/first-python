@@ -85,7 +85,7 @@ def name_account_match():
             return "Sorry, I don't think you have an account {}.".format(user)
 
 
-name_account_match()
+# name_account_match()
 
 # An experiment in checking input data using a hypothetical polling booth
 
@@ -135,11 +135,46 @@ def sanitize_age(data):
                 return "Check back in {0} years peewee".format(dataint)
 # sanitize_age(data=input("How old are you? ")
 
-# first_function(input("Give me a number"))
-
-# if age >= 18:
-#     print("You're old enough to vote")
-# else:
-#     print("Go back to middleschool, {0}".format(name))
-
 # CONTINUE AND BREAK COMMANDS
+
+def shopping():
+    shopping_list = ["milk", "pasta", "eggs", "spam", "bread", "rice"]
+
+    # for item in shopping_list:
+    #     if item != "spam":
+    #         print("Buy " + item)
+
+    # OR
+
+    # for item in shopping_list:
+    #     if item == "spam":
+    #         # When continue appears, it causes everything following it in the loop to be ignored
+    #         # and the loop to continue from the top, not unlike a GOTO command from basic.
+    #         continue
+    #     print("Buy " + item)
+    #
+    # for item in shopping_list:
+    #     if item == "spam":
+    #         # Similar to continue but will halt the entire for loop. Useful to ending a process when you've
+    #         # found what you've need
+    #         break
+    # print("Buy " + item)
+
+    item_to_find = "spam"
+    # None is roughly equivalent to Null
+    found_at = None
+
+    # A better example of a use-case for break
+    # for index in range(len(shopping_list)):
+    #     if shopping_list[index] == item_to_find:
+    #         found_at = index
+    #         break
+
+    # This can also be written as:
+    if item_to_find in shopping_list:
+        found_at = shopping_list.index(item_to_find)
+        print("{} found at position {}!".format(item_to_find, found_at))
+    else:
+        print("{} not found".format(item_to_find))
+shopping()
+
