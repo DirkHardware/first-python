@@ -1,6 +1,5 @@
 import random
 
-
 def hi_lo_game():
     highest = 10
     answer = random.randint(1, highest)
@@ -25,4 +24,4 @@ def hi_lo_game():
             else:
                 print("Sorry, you have not guessed correctly.")
 
-guessing_game()
+hi_lo_game()
