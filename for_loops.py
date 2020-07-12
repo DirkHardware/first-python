@@ -102,4 +102,12 @@ def div_by_7():
     #   print(i)
 
 
-div_by_7()
+def contrived():
+    numbers = [1, 45, 32, 12, 60]
+
+    for numbers in numbers
+        if numbers % 8 = 0:
+            print("The numbers are unacceptable")
+            break
+        else:
+

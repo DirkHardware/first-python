@@ -31,4 +31,4 @@ def guesstimate(low, high, answer):
         return answer
 
 
-binary_search(1, 10)
+binary_search(1, 1000)
