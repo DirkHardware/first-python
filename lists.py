@@ -81,3 +81,12 @@ print(chapters)
 chapters.sort(reverse=True)
 print(chapters)
 
+# THERE ARE TWO SORT FUNCTIONS
+# sort() modifies a list, while sorted() creates a new list, and as
+# such can be used on immutable objects
+
+totd = "Heresy grows from idleness"
+letters = sorted(totd)
+print(letters)
+
+# Note that sorted() is a function while sort() is a method
