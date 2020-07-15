@@ -60,3 +60,24 @@ for chapter in chapters:
         chapters.remove(chapter)
     else:
         print(chapter)
+
+
+# print("""\n \n {0}""".format(chapters))
+
+# ADDING ONE LIST TO ANOTHER
+
+chapters.extend(traitor_legions)
+# Note that it doesn't sort, and instead works like concat on a string
+# print(chapters)
+
+# SORTING LISTS
+
+chapters.sort()
+print(chapters)
+
+# Sort arranges thing by alphanumeric order
+# Sort has two key arguments. The first is reverse, which function is obvious
+
+chapters.sort(reverse=True)
+print(chapters)
+
