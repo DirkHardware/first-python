@@ -25,4 +25,9 @@ print(max(odd))
 
 print('Kashyyk'.count('y'))
 
-# What the hell happened to today
+# Iterating over a list
+
+for chapter in chapters:
+    print("chapter {0}: {1}".format(chapters.index(chapter) + 1, chapter))
+
+
