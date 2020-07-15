@@ -1,3 +1,4 @@
+import random
 
 chapters = [
     "Ultramarines",
@@ -25,16 +26,37 @@ print(max(odd))
 
 print('Kashyyk'.count('y'))
 
-# Iterating over a list
+# ITERATING OVER A LIST
 
 # for chapter in chapters:
 #     print("chapter {0}: {1}".format(chapters.index(chapter) + 1, chapter))
 
 # The emumerate function is a better way to handle this
 
-for index, chapter in enumerate(chapters):
-    print("chapter {0}: {1}".format(index + 1, chapter))
+# for index, chapter in enumerate(chapters):
+#     print("chapter {0}: {1}".format(index + 1, chapter))
 
 # index doesn't have to be called index, the variables between for and in
 # can be called whatever
 
+# REMOVING ITEMS FROM LISTS
+
+traitor_legions = ["Black Legion",
+                   "Alpha Legion",
+                   "Death Guard",
+                   "Emperor's Children",
+                   "Night Lords",
+                   "Thousand Suns"]
+
+rand_legion = random.randint(1, len(traitor_legions)) - 1
+print(rand_legion)
+
+chapters.append(traitor_legions[rand_legion])
+# print(chapters)
+
+for chapter in chapters:
+    if chapter in traitor_legions:
+        print("Uh oh! There's a traitor in our midst! Looks like it's the {0}".format(traitor_legions[rand_legion]))
+        chapters.remove(chapter)
+    else:
+        print(chapter)
