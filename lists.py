@@ -27,7 +27,14 @@ print('Kashyyk'.count('y'))
 
 # Iterating over a list
 
-for chapter in chapters:
-    print("chapter {0}: {1}".format(chapters.index(chapter) + 1, chapter))
+# for chapter in chapters:
+#     print("chapter {0}: {1}".format(chapters.index(chapter) + 1, chapter))
 
+# The emumerate function is a better way to handle this
+
+for index, chapter in enumerate(chapters):
+    print("chapter {0}: {1}".format(index + 1, chapter))
+
+# index doesn't have to be called index, the variables between for and in
+# can be called whatever
 

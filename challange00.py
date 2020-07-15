@@ -1,11 +1,36 @@
-print("The pet shop owner said \ "No, no, 'e's uh,...he's resting\"."')
+data = [
+    "Andromeda - Shrub",
+    "Bellflower - Flower",
+    "China Pink - Flower",
+    "Daffodil - Flower",
+    "Evening Primrose - Flower",
+    "French Marigold - Flower",
+    "Hydrangea - Shrub",
+    "Iris - Flower",
+    "Japanese Camellia - Shrub",
+    "Lavender - Shrub",
+    "Lilac- Shrub",
+    "Magnolia - Shrub",
+    "Peony - Shrub",
+    "Queen Anne's Lace - Flower",
+    "Red Hot Poker - Flower",
+    "Snapdragon - Flower",
+    "Sunflower - Flower",
+    "Tiger Lily - Flower",
+    "Witch Hazel - Shrub",
+]
 
-print("""The pet shop owner said "No, No, \
-'e's uh,...he's resting.'""")
+flowers = []
+shrubs = []
 
-another_string = """This string has beeen \
-split over \ 
-several \
-lines"""
+for datum in data:
+    if "Shrub" in datum:
+        shrubs.append(datum)
+    else:
+        flowers.append(datum)
 
-print(another_string)
+print(flowers)
+print(shrubs)
+
+# if "Shrub" in "Witch Hazel - Shrub":
+#     print("True")
