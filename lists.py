@@ -95,3 +95,7 @@ print(letters)
 
 all_chapters = chapters + traitor_legions
 print(all_chapters)
+
+# the list() class constructor can also be used to make a list out of any iterable
+
+list("4321")
