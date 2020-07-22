@@ -90,3 +90,8 @@ letters = sorted(totd)
 print(letters)
 
 # Note that sorted() is a function while sort() is a method
+
+# CONCATANATING LISTS
+
+all_chapters = chapters + traitor_legions
+print(all_chapters)
