@@ -96,6 +96,46 @@ print(letters)
 all_chapters = chapters + traitor_legions
 print(all_chapters)
 
+different_chapters = ["Scorpions", "Salamanders"]
+updated_chapters = chapters
+updated_chapters[2:] = different_chapters
+print(updated_chapters)
+
 # the list() class constructor can also be used to make a list out of any iterable
 
-list("4321")
+# list("4321")
+
+#COPYING LISTS
+
+# You can also copy lists with slices
+more_chapters = chapters[:]
+print(more_chapters)
+
+# A really effecient way is with the .copy() method
+more_chapters = chapters.copy()
+print(more_chapters)
+
+# DELETING LISTS
+
+# delete slices of data with the del function
+data = ["Jim", "Bob", "Khorne", "Nurgle", "Tzeench", "Slaanesh"]
+del data[0:2]
+print(data)
+
+# Be careful deleting items in a list as you iterate over it. In the
+# example below, 5 and 598 are not deleted, because when the for loop
+# hits 1 and 101 respectively, when the loop deletes the items at their
+# index, thus causing 5 and 598 to each move down an index. When the
+# for loop moves on to the next index, it skips them, because 20 and the
+# list and now occupy their old spaces due to the index shift
+# caused by the deletions.
+
+min_valid = 10
+max_valid = 100
+data = [1, 5, 20, 48, 64, 101, 598]
+
+for index, value in enumerate(data):
+    if (value < min_valid) or (value > max_valid):
+        del data[index]
+
+print(data)
