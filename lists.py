@@ -129,13 +129,35 @@ print(data)
 # for loop moves on to the next index, it skips them, because 20 and the
 # list and now occupy their old spaces due to the index shift
 # caused by the deletions.
-
+#
 min_valid = 10
 max_valid = 100
 data = [1, 5, 20, 48, 64, 101, 598]
+#
+# for index, value in enumerate(data):
+#     if (value < min_valid) or (value > max_valid):
+#         del data[index]
+#
+# print(data)
 
+# The safe way to strip the low values is shown bellow
+stop = 0
 for index, value in enumerate(data):
-    if (value < min_valid) or (value > max_valid):
-        del data[index]
+    if value >= min_valid:
+        stop = index
+        break
 
+print(stop)
+del data[:stop]
+print(data)
+
+# To strip the high values:
+start = 0
+# startimg backwards
+for index in range(len(data) - 1, -1, -1):
+    if data[index] <= max_valid:
+        start = index + 1
+        break
+print(start)
+del data[start:]
 print(data)
