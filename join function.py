@@ -4,6 +4,7 @@ chapters = ["Ultramrines", "Dark Angels", "Lamenters", "Blood Angels", "Alpha Le
 # print(", ".join(chapters))
 
 # Join() is an iterator by itself. It doesn't need a for loop to operate on a list.
+# ALL ITEMS MUST BE STRINGS
 
 nested_chapters = [["Ultramrines", "Dark Angels", "Lamenters", "Blood Angels"], ["Alpha Legion", "Black Legion", "Night Lords"]]
 seperator = ' | '
