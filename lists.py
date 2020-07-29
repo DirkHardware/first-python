@@ -61,7 +61,6 @@ for chapter in chapters:
     else:
         print(chapter)
 
-
 # print("""\n \n {0}""".format(chapters))
 
 # ADDING ONE LIST TO ANOTHER
@@ -105,7 +104,7 @@ print(updated_chapters)
 
 # list("4321")
 
-#COPYING LISTS
+# COPYING LISTS
 
 # You can also copy lists with slices
 more_chapters = chapters[:]
@@ -122,7 +121,7 @@ data = ["Jim", "Bob", "Khorne", "Nurgle", "Tzeench", "Slaanesh"]
 del data[0:2]
 print(data)
 
-# Be careful deleting items in a list as you iterate over it. In the
+# Be careful deleting items in a list as you iterate *forward* over it. In the
 # example below, 5 and 598 are not deleted, because when the for loop
 # hits 1 and 101 respectively, when the loop deletes the items at their
 # index, thus causing 5 and 598 to each move down an index. When the
@@ -161,3 +160,31 @@ for index in range(len(data) - 1, -1, -1):
 print(start)
 del data[start:]
 print(data)
+
+# You can also just iterate BACKWARDS!
+
+data = [104, 101, 4, 105, 308, 103, 5,
+        107, 100, 306, 106, 102, 108]
+min_valid = 100
+max_valid = 200
+
+# for index in range(len(data) -1, -1, -1):
+#     if data[index] < min_valid or data[index] > max_valid:
+#         print(index, data)
+#         del data[index]
+# print(data)
+
+# Reverse function
+top_index = len(data) - 1
+for index, value in enumerate(reversed(data)):
+    if value < min_valid or value > max_valid:
+        # What printing the index in a reversed enumerator shows is
+        # just the number of steps backwards taken. You have to subtract
+        # index from top_index to get the real index of each enumrated
+        # value
+        true_index = top_index - index
+        print(true_index, value)
+        print(data)
+        del data[true_index]
+print(data)
+
