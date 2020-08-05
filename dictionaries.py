@@ -4,5 +4,10 @@
 factions = {"Space Marines": "Assholes with giant shoulder pads",
             "Orks": "Cockney Space Hooligans",
             "Tyranids": "The bugs from Alien",
-            "Imperial Guards": "The true heroes of the Imperium",
+            "Imperial Guard": "The true heroes of the Imperium",
             7: 8}
+
+# Heres how you access individual items
+
+faction_details = factions["Imperial Guard"]
+print(faction_details)
