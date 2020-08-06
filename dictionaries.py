@@ -50,4 +50,7 @@ for faction in factions:
 
 # create a nested tuple of key:value pairs out of a dictionary
 f_tuple = tuple(factions.items())
-print(type(f_tuple[0]))
+print(f_tuple)
+
+# turning tuples into dictionary
+print(dict(f_tuple))
