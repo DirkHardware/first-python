@@ -47,3 +47,7 @@ print(factions)
 # However it is not guaranteed that they will show up in the same order
 for faction in factions:
     print(factions[faction])
+
+# create a nested tuple of key:value pairs out of a dictionary
+f_tuple = tuple(factions.items())
+print(type(f_tuple[0]))
