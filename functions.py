@@ -25,6 +25,17 @@ def centre_text_relative(*args, file=None):
     print(" " * left_margin, text)
 
 
-with open('centered', mode='w') as centered_file:
+# with open('centered', mode='w') as centered_file:
+#     centre_text("Star Trekking", "across the universe", file=centered_file)
 
-    centre_text("Star Trekking", "across the universe", file=centered_file)
+def returns_x():
+    x = 12
+    return x
+
+def print_var(y):
+    print(y)
+
+
+print_var(returns_x())
+
+
