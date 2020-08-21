@@ -1,8 +1,5 @@
 import tkinter
 
-print(tkinter.TkVersion)
-print(tkinter.TclVersion)
-
 # tkinter._test()
 
 # or
@@ -35,6 +32,20 @@ button3.grid(row=2, column=0)
 mainWindow.columnconfigure(0, weight=1)
 mainWindow.columnconfigure(1, weight=1)
 mainWindow.grid_columnconfigure(2, weight=1)
+
+leftFrame.config(relief='sunken', borderwidth=1)
+rightFrame.config(relief='sunken', borderwidth=1)
+leftFrame.grid(sticky='ns')
+rightFrame.grid(sticky='new')
+
+""" Without the weight option set to certain widgits, some things like
+sticky won't work. """
+
+rightFrame.columnconfigure(0, weight=1)
+# Since we've given the right frame weight, the sticky option for
+# button 2 works
+button1.grid(sticky='ew')
+button2.grid(sticky='ew')
 mainWindow.mainloop()
 
 """ Everything in tkinter is a hierarchy of windows. Not all windows.
