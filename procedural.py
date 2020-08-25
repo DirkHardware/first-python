@@ -22,17 +22,18 @@ for rows in range(0, minY):
     grid.append(row)
 
 # entranceDirection = random.randange(0, 4)
-entranceDirection = 1
+entrance_dir = 0
 # 0 = North, 1 = East, 2 = South, 3 = West
-if entranceDirection == 0:
-    grid[0][minX // 2] = 1
-    grid[0][(minX // 2) - 1] = 1
-    grid[0][(minX // 2) + 1] = 1
 
-elif entranceDirection == 1:
-    grid[minY // 2][-1] = 1
-    grid[(minY // 2) - 1][-1] = 1
-    grid[(minY // 2) + 1][-1] = 1
+def setEntrance(entrance_dir, grid):
+    if entrance_dir == 0:
+        grid[0][minX // 2] = 1
+        grid[0][(minX // 2) - 1] = 1
+        grid[0][(minX // 2) + 1] = 1
+    elif entrance_dir == 1:
+        grid[minY // 2][-1] = 1
+        grid[(minY // 2) - 1][-1] = 1
+        grid[(minY // 2) + 1][-1] = 1
 
 # This function draws a box by drawing each side of the square and using the fill function
 def emptyGrid(intDim):
@@ -112,6 +113,7 @@ myPen.setheading(0)
 # print(len(pixels[0]))
 # print(pixels[2])
 
+setEntrance(entrance_dir, grid)
 
 for i in range(0, len(grid)):
     for j in range(0, len(grid[i])):
