@@ -8,8 +8,8 @@ myPen = turtle.Turtle()
 myPen.speed(0)
 myPen.color("#000000")
 
-minX = 20
-minY = 20
+minX = 16
+minY = 16
 
 grid = [[]]
 for columns in range(0, minX):
@@ -21,19 +21,49 @@ for rows in range(0, minY):
         row.append(0)
     grid.append(row)
 
-# entranceDirection = random.randange(0, 4)
-entrance_dir = 0
+entrance_dir = random.randint(0, 4)
+# entrance_dir = 3
 # 0 = North, 1 = East, 2 = South, 3 = West
 
-def setEntrance(entrance_dir, grid):
+
+def setEntrance(entrance_dir = entrance_dir, grid = grid):
     if entrance_dir == 0:
+        entrance_side0 = [0, (minX // 2) - 1]
+        entrance_side1 = [0, (minX // 2)]
+        entrance_side2 = [0, (minX // 2) + 1]
         grid[0][minX // 2] = 1
         grid[0][(minX // 2) - 1] = 1
         grid[0][(minX // 2) + 1] = 1
+        return [entrance_side0, entrance_side1, entrance_side2]
     elif entrance_dir == 1:
+        entrance_side0 = [(minY // 2) - 1, -1]
+        entrance_side1 = [(minY // 2), -1]
+        entrance_side2 = [(minY // 2) + 1, -1]
         grid[minY // 2][-1] = 1
-        grid[(minY // 2) - 1][-1] = 1
-        grid[(minY // 2) + 1][-1] = 1
+        grid[(minY // 2) - 1][-1]
+        grid[(minY // 2) + 1][-1]
+        return [entrance_side0, entrance_side1, entrance_side2]
+    elif entrance_dir == 2:
+        entrance_side0 = [-1, (minX // 2) - 1]
+        entrance_side1 = [-1, (minX // 2)]
+        entrance_side2 = [-1, (minX // 2) + 1]
+        grid[-1][minX // 2] = 1
+        grid[-1][(minX // 2) - 1] = 1
+        grid[-1][(minX // 2) + 1] = 1
+        return [entrance_side0, entrance_side1, entrance_side2]
+    else:
+        entrance_side0 = [(minY // 2) - 1, 0]
+        entrance_side1 = [(minY // 2), 0]
+        entrance_side2 = [(minY // 2) + 1, 0]
+        grid[minY // 2][0] = 1
+        grid[(minY // 2) - 1][0] = 1
+        grid[(minY // 2) + 1][0] = 1
+        return [entrance_side0, entrance_side1, entrance_side2]
+
+
+
+entrance_bounds = setEntrance()
+print(entrance_bounds)
 
 # This function draws a box by drawing each side of the square and using the fill function
 def emptyGrid(intDim):
@@ -78,7 +108,7 @@ myPen.setheading(90)
 myPen.forward(100)
 myPen.setheading(0)
 
-##Here is an example of how to draw a box	
+##Here is an example of how to draw a box
 # box(boxSize)
 
 ##Here are some instructions on how to move "myPen" around before drawing a box.
@@ -113,13 +143,13 @@ myPen.setheading(0)
 # print(len(pixels[0]))
 # print(pixels[2])
 
-setEntrance(entrance_dir, grid)
+# setEntrance(entrance_dir, grid)
 
 for i in range(0, len(grid)):
     for j in range(0, len(grid[i])):
         if grid[i][j] == 0:
             emptyGrid(boxSize)
-            print("Printing grid row {0}".format(i))
+            # print("Printing grid row {0}".format(i))
         else:
             fillGrid(boxSize)
         myPen.penup()
