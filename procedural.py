@@ -4,7 +4,7 @@ import turtle
 
 myPen = turtle.Turtle()
 # myPen.tracer(0)
-myPen.speed(0)
+myPen.speed(50)
 myPen.color("#000000")
 
 
@@ -66,7 +66,7 @@ for i in range(0, len(pixels)):
     for j in range(0, len(pixels[i])):
         if pixels[i][j] == 1:
             box(boxSize)
-        myPen.penup()
+        myPen.pendown()
         myPen.forward(boxSize)
         myPen.pendown()
     myPen.setheading(270)
@@ -77,4 +77,5 @@ for i in range(0, len(pixels)):
     myPen.setheading(0)
     myPen.pendown()
 
-myPen.getscreen().update()	
+myPen.getscreen().update()
+turtle.done()
