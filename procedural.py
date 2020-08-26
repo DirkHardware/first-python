@@ -2,6 +2,7 @@
 
 import turtle
 import random
+import import_test
 
 myPen = turtle.Turtle()
 # myPen.tracer(0)
@@ -65,20 +66,20 @@ entrance_bounds = setEntrance()
 print(entrance_bounds)
 
 
-def addHallway(entrance_dir = entrance_dir, entrance_bounds = entrance_bounds):
-    anchor1x = entrance_bounds[0][0]
-    anchor1y = entrance_bounds[0][1]
-    anchor2x = entrance_bounds[2][0]
-    anchor2y = entrance_bounds[2][1]
-    print(anchor1x, anchor1y)
-    print(anchor2x, anchor2y)
-    hallway_length = 3
-    for squares in range(hallway_length):
-        grid[anchor1x + squares][anchor1y] = 1
-        grid[anchor2x + squares][anchor2y] = 1
+# def addHallway(entrance_dir = entrance_dir, anchors = entrance_bounds):
+#     anchor1y = anchors[0][0]
+#     anchor1x = anchors[0][1]
+#     anchor2y = anchors[2][0]
+#     anchor2x = anchors[2][1]
+#     print(anchor1x, anchor1y)
+#     print(anchor2x, anchor2y)
+#     hallway_length = 7
+#     for squares in range(hallway_length):
+#         grid[anchor1y + squares][anchor1x] = 1
+#         grid[anchor2y + squares][anchor2x] = 1
 
 
-addHallway()
+grid = import_test.addHallway(entrance_dir, entrance_bounds, grid)
 
 
 
