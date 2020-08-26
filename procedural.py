@@ -21,8 +21,8 @@ for rows in range(0, minY):
         row.append(0)
     grid.append(row)
 
-entrance_dir = random.randint(0, 4)
-# entrance_dir = 3
+# entrance_dir = random.randint(0, 4)
+entrance_dir = 0
 # 0 = North, 1 = East, 2 = South, 3 = West
 
 
@@ -40,8 +40,8 @@ def setEntrance(entrance_dir = entrance_dir, grid = grid):
         entrance_side1 = [(minY // 2), -1]
         entrance_side2 = [(minY // 2) + 1, -1]
         grid[minY // 2][-1] = 1
-        grid[(minY // 2) - 1][-1]
-        grid[(minY // 2) + 1][-1]
+        grid[(minY // 2) - 1][-1] = 1
+        grid[(minY // 2) + 1][-1] = 1
         return [entrance_side0, entrance_side1, entrance_side2]
     elif entrance_dir == 2:
         entrance_side0 = [-1, (minX // 2) - 1]
@@ -61,9 +61,26 @@ def setEntrance(entrance_dir = entrance_dir, grid = grid):
         return [entrance_side0, entrance_side1, entrance_side2]
 
 
-
 entrance_bounds = setEntrance()
 print(entrance_bounds)
+
+
+def addHallway(entrance_dir = entrance_dir, entrance_bounds = entrance_bounds):
+    anchor1x = entrance_bounds[0][0]
+    anchor1y = entrance_bounds[0][1]
+    anchor2x = entrance_bounds[2][0]
+    anchor2y = entrance_bounds[2][1]
+    print(anchor1x, anchor1y)
+    print(anchor2x, anchor2y)
+    hallway_length = 3
+    for squares in range(hallway_length):
+        grid[anchor1x + squares][anchor1y] = 1
+        grid[anchor2x + squares][anchor2y] = 1
+
+
+addHallway()
+
+
 
 # This function draws a box by drawing each side of the square and using the fill function
 def emptyGrid(intDim):
