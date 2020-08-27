@@ -2,7 +2,7 @@
 
 import turtle
 import random
-import import_test
+import rooms
 
 myPen = turtle.Turtle()
 # myPen.tracer(0)
@@ -79,7 +79,7 @@ print(entrance_bounds)
 #         grid[anchor2y + squares][anchor2x] = 1
 
 
-grid = import_test.addHallway(entrance_dir, entrance_bounds, grid)
+grid = rooms.addHallway(entrance_dir, entrance_bounds, grid)
 
 
 
@@ -125,43 +125,6 @@ myPen.forward(-(len(grid)*3.5))
 myPen.setheading(90)
 myPen.forward(100)
 myPen.setheading(0)
-
-##Here is an example of how to draw a box
-# box(boxSize)
-
-##Here are some instructions on how to move "myPen" around before drawing a box.
-# myPen.setheading(0) #point to the right, 90 to go up, 180 to go to the left 270 to go down
-# myPen.penup()
-# myPen.forward(boxSize)
-# myPen.pendown()
-
-# Here is how your PixelArt is stored (using a "list of lists")
-
-# pixels = [[0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]]
-# pixels.append([0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0])
-# pixels.append([0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0])
-# pixels.append([0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0])
-# pixels.append([0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0])
-# pixels.append([1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1])
-# pixels.append([1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1])
-# pixels.append([1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1])
-# pixels.append([1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1])
-# pixels.append([1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1])
-# pixels.append([1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1])
-# pixels.append([1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1])
-# pixels.append([0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0])
-# pixels.append([0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0])
-# pixels.append([0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0])
-# pixels.append([0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0])
-
-
-#
-
-# print(pixels)
-# print(len(pixels[0]))
-# print(pixels[2])
-
-# setEntrance(entrance_dir, grid)
 
 for i in range(0, len(grid)):
     for j in range(0, len(grid[i])):
