@@ -89,7 +89,7 @@ def load_data():
         # Okay, I sort of understand why this is happening, for whatever reason an artist isn't appended to the artist
         # field until AFTER all their songs have been processed and a new artist has appeared in the list.
         # Wait I get it now, it's because the artist list isn't appended with a new artist until the artist AFTER
-        # THEM trips the elif condition on on line 65. The last artist won't get appended to the list by the loop
+        # THEN trips the elif condition on on line 65. The last artist won't get appended to the list by the loop
         # because there is no artist after them.
 
         if new_artist is not None:
@@ -100,6 +100,19 @@ def load_data():
     return artist_list
 
 
+def create_checkfile(artist_list):
+    """Creat a check file from the object data for comparison with the original file"""
+    with open("checkfile.txt", "w") as checkfile:
+        for new_artist in artist_list:
+            for new_album in new_artist.albums:
+                for new_song in new_album.tracks:
+                    print('{0.name}\t{1.name}\t{1.year}\t{2.title}'.format(new_artist, new_album, new_song),
+                          file=checkfile)
+
+
+
 if __name__ == '__main__':
     artists = load_data()
     print("There are {} artists.".format(len(artists)))
+
+    create_checkfile(artists)
