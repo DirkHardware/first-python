@@ -85,10 +85,10 @@ def load_data():
 
         # After reading the last line in the text file, we will have an artist and album that haven't been stored
         # Process them now
-            if new_artist is not None:
-                if new_album is not None:
-                    new_artist.add_album(new_album)
-                artist_list.append(new_artist)
+        if new_artist is not None:
+            if new_album is not None:
+                new_artist.add_album(new_album)
+            artist_list.append(new_artist)
     return artist_list
 
 
