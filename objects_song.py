@@ -85,10 +85,18 @@ def load_data():
 
         # After reading the last line in the text file, we will have an artist and album that haven't been stored
         # Process them now
+
+        # Okay, I sort of understand why this is happening, for whatever reason an artist isn't appended to the artist
+        # field until AFTER all their songs have been processed and a new artist has appeared in the list.
+        # Wait I get it now, it's because the artist list isn't appended with a new artist until the artist AFTER
+        # THEM trips the elif condition on on line 65. The last artist won't get appended to the list by the loop
+        # because there is no artist after them.
+
         if new_artist is not None:
             if new_album is not None:
                 new_artist.add_album(new_album)
             artist_list.append(new_artist)
+
     return artist_list
 
 
