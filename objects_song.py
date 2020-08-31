@@ -103,3 +103,6 @@ def load_data():
 if __name__ == '__main__':
     artists = load_data()
     print("There are {} artists.".format(len(artists)))
+
+# foo
+
