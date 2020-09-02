@@ -29,3 +29,6 @@ print(anderson.level)
 print(anderson.score)
 
 anderson.level = 0
+
+anderson.score = 500
+print(anderson)
