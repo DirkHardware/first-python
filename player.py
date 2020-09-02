@@ -20,7 +20,7 @@ class Player(object):
         return self._level
 
     def _set_level(self, new_level):
-        if new_level > 1:
+        if new_level > 0:
             if new_level > self._level:
                 score_bonus = new_level - self._level
                 self._level = new_level
@@ -29,7 +29,7 @@ class Player(object):
                 score_bonus = self._level - new_level
                 self._level = new_level
                 self.score = self.score - (1000 * score_bonus)
-        else:
+        elif new_level < 1:
             print("Level cannot be less than 1 ")
             self._level = 1
             self.score = 0

@@ -16,6 +16,16 @@ print(anderson.name)
 # anderson.lives -= 1
 # print(anderson)
 
-anderson.level = 3
+anderson.level = 5
 print(anderson.level)
 print(anderson.score)
+
+anderson.level = 2
+print(anderson.level)
+print(anderson.score)
+
+anderson.level = 1
+print(anderson.level)
+print(anderson.score)
+
+anderson.level = 0
