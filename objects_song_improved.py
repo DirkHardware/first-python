@@ -2,7 +2,7 @@ class Song:
 
     def __init__(self, title, artist, duration=0):
 
-        self.title = title
+        self.name = title
         self.artist = artist
         self.duration = duration
 
@@ -23,12 +23,15 @@ class Album:
 
         # if no position value is given to override the default value
         # it is pushed to the end of the list
-        if position is None:
-            self.tracks.append(song)
+        song_found = find_object(song, self.tracks)
+        if song_found is None:
+            song_found = Song(song, self.artist)
+            if position is None:
+                self.tracks.append(song)
         # If a position value is given, it inserts it at the index point
         # given by the position value
-        else:
-            self.tracks.insert(position, song)
+            else:
+                self.tracks.insert(position, song_found)
 
 
 class Artist:
@@ -62,7 +65,7 @@ class Artist:
         if album_found is None:
             print(name + "not found")
             album_found = Album(name, year, self)
-            self.add_adlbum(album_found)
+            self.add_album(album_found)
         else:
             print("Found album" + name)
 
@@ -105,7 +108,7 @@ def create_checkfile(artist_list):
         for new_artist in artist_list:
             for new_album in new_artist.albums:
                 for new_song in new_album.tracks:
-                    print('{0.name}\t{1.name}\t{1.year}\t{2.title}'.format(new_artist, new_album, new_song),
+                    print('{0.name}\t{1.name}\t{1.year}\t{2.name}'.format(new_artist, new_album, new_song),
                           file=checkfile)
 
 
