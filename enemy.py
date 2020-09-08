@@ -17,4 +17,6 @@ class Enemy:
         return "Name: {0.name}, Lives: {0.lives}, Hit points: {0.hit_points}".format(self)
 
 
+class Troll(Enemy):
+    pass
 
