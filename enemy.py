@@ -18,5 +18,8 @@ class Enemy:
 
 
 class Troll(Enemy):
-    pass
 
+    def __init__(self, name):
+        # One way of calling the init method from the super class, this is the python 2 way
+        # Enemy.__init__(self, name=name, lives=1, hit_points=23)
+        super(Troll, self).__init__(name=name, lives=1, hit_points=23)

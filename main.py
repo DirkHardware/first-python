@@ -3,13 +3,13 @@ from enemy import Enemy, Troll
 
 anderson = Player("Anderson")
 
-ugly_troll = Troll()
+ugly_troll = Troll("Pug")
 print("Ugly troll - {}".format(ugly_troll))
 
-another_troll = Troll("Ugly", 18, 1)
+another_troll = Troll("Ug")
 print("Another troll - {}".format(another_troll))
 
-brother = Troll("Urg", 23)
+brother = Troll("Urg")
 print(brother)
 
 # print(anderson.name)
