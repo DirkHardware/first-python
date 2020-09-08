@@ -1,5 +1,5 @@
 from player import Player
-from enemy import Enemy, Troll
+from enemy import Enemy, Troll, Vampyre
 
 anderson = Player("Anderson")
 
@@ -11,6 +11,26 @@ print("Another troll - {}".format(another_troll))
 
 brother = Troll("Urg")
 print(brother)
+
+lazlo = Vampyre("Lazlo")
+nandor = Vampyre("Nandor")
+
+print(lazlo)
+print(nandor)
+
+lazlo.take_damage(9)
+nandor.take_damage(13)
+brother.take_damage(22)
+another_troll.take_damage(24)
+
+print(lazlo)
+print(nandor)
+print(brother)
+print(another_troll)
+
+ugly_troll.grunt()
+another_troll.grunt()
+brother.grunt()
 
 # print(anderson.name)
 # print(anderson.lives)
