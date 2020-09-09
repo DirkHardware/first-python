@@ -6,7 +6,7 @@ class Player(object):
         self.level = 1
         self.score = 0
 
-    # because lives is hidden with an underscore, we need to create
+    # because _lives is hidden with an underscore, we need to create
     # getter and setter methods for it
 
     def _get_lives(self):

@@ -36,7 +36,7 @@ class Player(object):
             self._level = 1
             self._score = 0
 
-    # This line allows the .lives values in main.py to work as they are
+    # This line allows the ._lives values in main.py to work as they are
     # written without rewriting or calling the setter and getter functions
     #
     # In fact, you can see we can use properties to affect anything as long

@@ -18,32 +18,28 @@ nandor = Vampyre("Nandor")
 print(lazlo)
 print(nandor)
 
-lazlo.take_damage(9)
-nandor.take_damage(13)
-brother.take_damage(22)
-another_troll.take_damage(24)
-
 print(lazlo)
 print(nandor)
 print(brother)
 print(another_troll)
 
-ugly_troll.grunt()
-another_troll.grunt()
-brother.grunt()
+while lazlo._alive:
+    lazlo.take_damage(1)
+        # print(lazlo)
+
 
 # print(anderson.name)
-# print(anderson.lives)
-# anderson.lives -= 1
+# print(anderson._lives)
+# anderson._lives -= 1
 # print(anderson)
 #
-# anderson.lives -= 1
+# anderson._lives -= 1
 # print(anderson)
 #
-# anderson.lives -= 1
+# anderson._lives -= 1
 # print(anderson)
 #
-# anderson.lives -= 1
+# anderson._lives -= 1
 # print(anderson)
 
 # anderson.level = 5
