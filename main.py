@@ -1,5 +1,5 @@
 from player import Player
-from enemy import Enemy, Troll, Vampyre
+from enemy import Enemy, Troll, Vampyre, VampyreKing
 
 anderson = Player("Anderson")
 
@@ -23,9 +23,14 @@ print(nandor)
 print(brother)
 print(another_troll)
 
-while lazlo._alive:
-    lazlo.take_damage(1)
-        # print(lazlo)
+max = VampyreKing("Max")
+
+# while lazlo._alive:
+#     lazlo.take_damage(1)
+#         # print(lazlo)
+
+while max._alive:
+    max.take_damage(4)
 
 
 # print(anderson.name)

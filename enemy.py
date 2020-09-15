@@ -66,4 +66,21 @@ class Vampyre(Enemy):
     def __str__(self):
         return "Name: {0._name}, Lives: {0._lives}, Hit points: {0._hit_points} Status:{0.status}".format(self)
 
+class VampyreKing(Vampyre):
+
+    # This is my solution. For some reason I can't seem to use the init super method the same way the
+    # regular Vampyre Class does
+    def __init__(self, name, status="V. Spook"):
+        super().__init__(name=name)
+        self._lives = 3
+        self._hit_points = 120
+
+    def take_damage(self, damage):
+        if not self.dodges():
+            super().take_damage(damage=damage/4)
+
+    def __str__(self):
+        return "Name: {0._name}, Lives: {0._lives}, Hit points: {0._hit_points} Status:{0.status}".format(self)
+
+
 
