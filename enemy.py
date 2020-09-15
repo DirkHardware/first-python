@@ -72,12 +72,16 @@ class VampyreKing(Vampyre):
     # regular Vampyre Class does
     def __init__(self, name, status="V. Spook"):
         super().__init__(name=name)
+        # Because the above line is actually creating a new Vampyre instance we can't
+        # just change the variables via the super init apparently. We have to add them manually
         self._lives = 3
-        self._hit_points = 120
+        self._hit_points = 140
 
     def take_damage(self, damage):
-        if not self.dodges():
-            super().take_damage(damage=damage/4)
+        # if not self.dodges():
+        #     super().take_damage(damage=damage/4)
+        # Time's way is better
+        super.().take_damage(damage // 4)
 
     def __str__(self):
         return "Name: {0._name}, Lives: {0._lives}, Hit points: {0._hit_points} Status:{0.status}".format(self)
