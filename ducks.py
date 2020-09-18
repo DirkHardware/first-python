@@ -29,6 +29,8 @@ class Duck(object):
 
     # Composition is when your class takes another class like this.
     # This is similar to your current_structure attribute in dynamic dungeons
+
+    #It is *composed* of other classes
     def fly(self):
         self._wing.fly()
 
